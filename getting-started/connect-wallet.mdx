@@ -1,0 +1,52 @@
+---
+title: "Connect a wallet"
+description: "Set up a Vara-compatible browser wallet and connect it to RivrDEX."
+---
+
+To interact with RivrDEX you need a browser wallet that supports Vara Network. RivrDEX is non-custodial — your keys stay in your wallet and your assets remain under your control at all times.
+
+## Supported wallets
+
+<CardGroup cols={2}>
+  <Card title="SubWallet" icon="wallet" href="https://subwallet.app">
+    Recommended. Full Vara Network support, clean UI, and active development.
+  </Card>
+  <Card title="Talisman" icon="wallet" href="https://talisman.xyz">
+    Popular Substrate wallet with multi-account and multi-network support.
+  </Card>
+  <Card title="Nova Wallet" icon="mobile" href="https://novawallet.io">
+    Mobile-first wallet for iOS and Android with browser extension support.
+  </Card>
+  <Card title="Polkadot.js" icon="puzzle-piece" href="https://polkadot.js.org/extension">
+    The official Polkadot browser extension — minimal, no-frills, and widely supported.
+  </Card>
+</CardGroup>
+
+## Connect your wallet
+
+<Steps>
+  <Step title="Install a wallet extension">
+    Download and install your preferred wallet from its official website. SubWallet is recommended for the best RivrDEX experience.
+  </Step>
+  <Step title="Create or import an account">
+    Open the wallet extension and follow its setup flow to create a new account or import an existing one using your seed phrase.
+  </Step>
+  <Step title="Configure for Vara Network">
+    In your wallet settings, make sure Vara Network is enabled as an active network. Most wallets include Vara by default — if not, add it manually from the network list.
+
+    <Note>Make sure your wallet is configured for Vara Network before connecting to RivrDEX.</Note>
+  </Step>
+  <Step title="Open the RivrDEX app">
+    Go to [stg-app.rivrdex.io](https://stg-app.rivrdex.io) in your browser.
+  </Step>
+  <Step title="Click Connect Wallet">
+    Click the **Connect Wallet** button in the top-right corner of the app. A modal will appear listing available wallet extensions detected in your browser.
+  </Step>
+  <Step title="Approve the connection">
+    Select your wallet from the list. Your wallet will prompt you to approve the connection — confirm it. Your account address will appear in the top-right once connected.
+  </Step>
+</Steps>
+
+## Non-custodial by design
+
+RivrDEX never holds your funds. Every transaction is signed locally in your wallet and executed on-chain. You can disconnect at any time without any risk to your assets.

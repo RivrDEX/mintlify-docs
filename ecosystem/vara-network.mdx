@@ -1,0 +1,53 @@
+---
+title: "Vara Network"
+description: "The layer-1 blockchain powering RivrDEX — fast block times, WASM smart contracts, and near-zero transaction costs."
+---
+
+Vara Network is a standalone layer-1 blockchain built on [Gear Protocol](https://gear-tech.io). It is optimized for smart contract execution — combining fast finality, WASM-based contracts, and an actor model for asynchronous messaging.
+
+RivrDEX is built entirely on Vara. Everything you do on RivrDEX — swapping, adding liquidity, creating pairs — runs as on-chain WASM smart contracts on Vara.
+
+## Key properties
+
+- **Fast block times** — transactions confirm quickly, enabling a responsive trading experience.
+- **WASM smart contracts** — contracts compile to WebAssembly, giving developers a wide choice of languages and predictable execution.
+- **Near-zero transaction costs** — gas fees on Vara are a fraction of those on EVM chains, making frequent interactions practical.
+- **Actor model** — contracts communicate via asynchronous message passing, enabling composable and non-blocking contract interactions.
+
+## Why RivrDEX is built on Vara
+
+A DEX needs speed, low cost, and reliable smart contract execution. Vara delivers all three:
+
+- **Speed** — fast block times mean swaps and liquidity changes settle without long waits.
+- **Near-gasless UX** — near-zero fees remove the friction that discourages small trades or frequent LP activity.
+- **WASM runtime** — contracts run in a sandboxed, high-performance environment well-suited to financial logic.
+
+Together, these properties make Vara the right foundation for a high-frequency trading application.
+
+## Gear Protocol
+
+Vara is built on [Gear Protocol](https://gear-tech.io). Gear provides the underlying WASM runtime (`gear.rs`) and the actor-based messaging system that Vara's smart contracts run on.
+
+If you are a developer looking to understand the execution environment, the Gear Protocol documentation is the right starting point.
+
+## Developer tooling
+
+To interact with Vara smart contracts programmatically, you can use:
+
+- **Polkadot.js API** — the standard Substrate/Polkadot JavaScript library, compatible with Vara.
+- **Gear.js SDK** — a higher-level SDK purpose-built for Gear-based chains like Vara.
+
+<Note>
+  RivrDEX does not publish a public SDK today. If you are building an integration, start with the Gear.js SDK for the most straightforward path to reading state and sending messages to Vara contracts.
+</Note>
+
+## Learn more
+
+<CardGroup cols={2}>
+  <Card title="Vara Network" icon="network-wired" href="https://vara.network">
+    Explore the Vara Network — documentation, ecosystem, and validator info.
+  </Card>
+  <Card title="Gear Protocol" icon="gear" href="https://gear-tech.io">
+    Read about the underlying Gear Protocol runtime and WASM smart contract model.
+  </Card>
+</CardGroup>

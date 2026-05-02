@@ -1,0 +1,70 @@
+---
+title: "AMM mechanism"
+description: "How RivrDEX prices trades using the constant product formula — no order book required."
+---
+
+RivrDEX is an **automated market maker (AMM)**. Instead of matching buyers and sellers through an order book, an AMM uses a mathematical formula to set prices based on the ratio of tokens held in a liquidity pool.
+
+## How an AMM works
+
+Every trading pair on RivrDEX has a **liquidity pool** — a smart contract holding reserves of two tokens (call them X and Y). The price of each token is determined entirely by how much of each token is in the pool at any moment.
+
+When you swap token X for token Y:
+
+1. You deposit X into the pool.
+2. The pool releases Y to you.
+3. The ratio of X to Y shifts, which changes the price.
+
+No counterparty is required. The contract itself is always the other side of the trade.
+
+## The constant product formula
+
+RivrDEX uses the same formula that Uniswap v2 pioneered, adapted for Vara Network's WASM runtime:
+
+```text
+# Constant product formula
+x * y = k
+
+# After swap of dx for dy:
+(x + dx) * (y - dy) = k
+dy = y - k / (x + dx)
+```
+
+- `x` — reserve of token X in the pool
+- `y` — reserve of token Y in the pool
+- `k` — a constant that must hold before and after every trade
+- `dx` — amount of token X you send in
+- `dy` — amount of token Y you receive
+
+The product `x * y` must always equal `k`. This means the pool can never be fully drained of either token — the price of the scarcer token rises asymptotically as supply falls.
+
+## Price impact
+
+The larger your trade relative to the pool's total liquidity, the more you shift the token ratio — and the worse your effective price becomes. This is called **price impact**.
+
+<Info>
+  A trade that is 1% of the pool's reserves will have noticeably worse pricing than a trade that is 0.1%. For large trades, consider splitting your order into smaller chunks.
+</Info>
+
+## Slippage
+
+Between the time you submit a transaction and the time it is executed on-chain, other trades may occur and shift the price. The difference between your expected price and the executed price is **slippage**.
+
+You can set a **slippage tolerance** in the RivrDEX interface. If the price moves beyond your tolerance before your transaction is included, the swap will revert rather than fill at an unfavorable rate.
+
+<Tip>
+  For volatile or low-liquidity pairs, increase your slippage tolerance slightly. For stable, deep pools, a tight tolerance (0.1–0.5%) is usually sufficient.
+</Tip>
+
+## Price impact vs. slippage
+
+| Concept | Cause | When it happens |
+|---|---|---|
+| Price impact | Your trade size relative to pool depth | Always — built into the formula |
+| Slippage | Other trades moving the price between submission and execution | Only when the chain is active between your submit and confirmation |
+
+Both reduce the amount of token Y you receive. Price impact is predictable and visible before you confirm; slippage is not.
+
+## Comparison to Uniswap v2
+
+RivrDEX's AMM logic is directly inspired by Uniswap v2. The core formula and pool mechanics are equivalent. The key difference is execution environment: RivrDEX runs on **Vara Network** using Gear smart contracts compiled to WASM, rather than the EVM. This enables near-gasless transactions and Vara's actor-model message passing — but the trading math is the same.

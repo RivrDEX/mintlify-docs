@@ -1,0 +1,67 @@
+---
+title: "Creating a trading pair"
+description: "Deploy a new liquidity pool for any two tokens on Vara Network. No approval required — anyone can create a pair."
+---
+
+A trading pair is a liquidity pool that holds two tokens and allows users to swap between them. RivrDEX is fully permissionless — you can create a new pool for any two Vara tokens without approval from anyone.
+
+## Who should create a pair?
+
+Creating a pair is primarily useful if you:
+
+- Are launching a new token and want it to be tradeable on RivrDEX.
+- Want to enable trading between two tokens that don't have an existing pool.
+- Are bootstrapping liquidity for a new market.
+
+Once created, the pair is live and open — anyone can trade against it or add liquidity.
+
+## How initial price is set
+
+The first deposit into a new pool establishes the starting price. The ratio of the two tokens you deposit determines that price. For example:
+
+- Depositing 1,000 TOKEN and 10 VARA sets an initial price of **0.01 VARA per TOKEN** (or 100 TOKEN per VARA).
+- There is no oracle or external price feed — the ratio you set *is* the market price at launch.
+
+<Warning>
+Set the initial price carefully. If you set it significantly above or below the fair market value, arbitrage bots will immediately trade against your pool to bring the price in line — at your expense. You will effectively sell your deposited tokens at the wrong price.
+
+Before creating a pair, verify the current market price of both tokens and deposit them at the correct ratio.
+</Warning>
+
+## How to create a pair
+
+<Steps>
+  <Step title="Go to Pools">
+    Open [stg-app.rivrdex.io](https://stg-app.rivrdex.io) and navigate to **Pools**.
+  </Step>
+  <Step title="Select Create Pair">
+    Click **Create Pair**. If you don't see this option, make sure your wallet is connected.
+  </Step>
+  <Step title="Select your two tokens">
+    Use the token selectors to choose the two tokens for your new pool. You can select any two Vara-compatible tokens.
+  </Step>
+  <Step title="Enter the initial deposit amounts">
+    Enter the amount of each token you want to deposit. The ratio between these amounts sets the starting price of the pair.
+
+    - Double-check the ratio matches the intended market price before proceeding.
+    - There is no minimum deposit, but more initial liquidity means less price impact for early traders.
+  </Step>
+  <Step title="Review and confirm">
+    Review the pair details, initial price, and your deposit amounts. Click **Create and deposit**, then approve the transaction in your wallet.
+  </Step>
+  <Step title="Pair is live">
+    Once the transaction confirms, the pool is deployed and active. You receive LP tokens representing your initial liquidity position, and the pair is immediately available for trading and additional liquidity deposits.
+  </Step>
+</Steps>
+
+## After creation
+
+Once your pair is live:
+
+- Any user can swap between the two tokens using the [Swap](/features/swapping) interface.
+- Any user can add liquidity to the pool and earn a share of the 0.35% swap fee.
+- The price adjusts automatically as trades occur, following the constant product formula (`x * y = k`).
+
+<Note>
+Your initial deposit earns swap fees from the moment the pair is created. Every trade in the pool contributes 0.35% to liquidity providers, distributed in proportion to pool share.
+</Note>

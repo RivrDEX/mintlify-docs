@@ -1,0 +1,71 @@
+---
+title: FAQ
+description: Answers to common questions about RivrDEX — fees, wallets, liquidity, and more.
+---
+
+<AccordionGroup>
+  <Accordion title="Do I need to pay gas fees on RivrDEX?">
+    No. RivrDEX runs on Vara Network, whose architecture eliminates traditional gas overhead. You pay only the **0.35% swap fee** on each trade — nothing more. That fee goes directly to liquidity providers, not to any protocol or central party.
+  </Accordion>
+
+  <Accordion title="What tokens can I trade on RivrDEX?">
+    Any fungible token deployed on Vara Network. If a trading pair already exists, you can swap immediately. If one doesn't exist yet, you can create it yourself by depositing both tokens and setting the initial price. RivrDEX is fully permissionless — there is no token allowlist.
+  </Accordion>
+
+  <Accordion title="Which wallets are supported?">
+    RivrDEX supports the following Vara-compatible wallets:
+
+    - **SubWallet** (recommended)
+    - **Talisman**
+    - **Nova Wallet**
+    - **Polkadot.js extension**
+
+    Install the extension for your preferred wallet, create or import an account, and connect it to the app at [stg-app.rivrdex.io](https://stg-app.rivrdex.io).
+  </Accordion>
+
+  <Accordion title="Is RivrDEX custodial?">
+    No. RivrDEX is fully non-custodial. You retain control of your private keys and assets at all times. When you add liquidity, the tokens are held in on-chain pool contracts — but no central party can access or move your funds. Only you can withdraw your position by redeeming your LP tokens.
+  </Accordion>
+
+  <Accordion title="What is impermanent loss?">
+    Impermanent loss occurs when the price of tokens in a pool changes relative to when you deposited them. Because the AMM rebalances your position to maintain the constant product formula, you may end up holding more of the token that fell in price and less of the one that rose.
+
+    The difference between the value of your pool position and the value of simply holding both tokens outside the pool is called impermanent loss. It is "impermanent" because if prices return to their original ratio, the loss disappears entirely. Trading fees earned while you are in the pool partially offset this risk.
+
+    <Note>
+      Impermanent loss is most significant in volatile or highly directional markets. Consider the risk before providing liquidity to pairs with large price swings.
+    </Note>
+  </Accordion>
+
+  <Accordion title="How are liquidity provider fees paid out?">
+    Fees are not distributed immediately. Instead, they accumulate inside the pool over time, gradually increasing the value of each LP token. When you remove liquidity and burn your LP tokens, you receive your proportional share of the pool — your original principal plus all fees earned while you were in the pool.
+  </Accordion>
+
+  <Accordion title="Can I create my own trading pair?">
+    Yes. RivrDEX is permissionless — anyone can create a new pair by depositing both tokens into a new pool contract. You set the initial price by choosing the ratio of tokens you deposit. Once created, the pair is immediately available for other users to trade and provide liquidity to.
+  </Accordion>
+
+  <Accordion title="Is RivrDEX open-source?">
+    Yes. All RivrDEX smart contracts are public and auditable. You can review the on-chain code directly on GitHub. Open-source development means anyone can verify how the protocol works and that there are no hidden mechanisms. See the [Links](/resources/links) page for the repository.
+  </Accordion>
+
+  <Accordion title="What network is RivrDEX built on?">
+    RivrDEX is deployed on [Vara Network](https://vara.network) — a standalone layer-1 blockchain built on the Gear Protocol. Vara's actor-based messaging model enables near-gasless transactions and high-throughput on-chain execution, making it well-suited for a real-time DEX.
+  </Accordion>
+
+  <Accordion title="What is the current status of RivrDEX?">
+    RivrDEX is currently in **staging / testnet**. This means:
+
+    - You are trading with **TVARA** (test tokens), not real value
+    - The app and contracts may receive updates without notice
+    - Features and interfaces are subject to change
+
+    <Tip>
+      Check [rivrdex.io](https://rivrdex.io) for the latest announcements and mainnet launch updates.
+    </Tip>
+  </Accordion>
+
+  <Accordion title="How do I get test tokens?">
+    You can get TVARA (Vara testnet tokens) from the Vara testnet faucet. Once you have TVARA in your wallet, you can use it to trade on RivrDEX. See the [Getting Tokens](/getting-started/get-tokens) page for step-by-step instructions.
+  </Accordion>
+</AccordionGroup>

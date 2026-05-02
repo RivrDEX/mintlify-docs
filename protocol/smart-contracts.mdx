@@ -1,0 +1,80 @@
+---
+title: "Smart contracts"
+description: "An overview of RivrDEX's contract architecture — Factory, Pair, and Router — built with Gear on Vara Network."
+---
+
+RivrDEX is built on **Gear smart contracts** — WASM-based programs running on Vara Network. The architecture is inspired by Uniswap v2, with three core contract types working together.
+
+<Note>
+  Contract addresses for the current deployment are available on the official RivrDEX GitHub and website.
+</Note>
+
+<Warning>
+  Always verify contract addresses from official sources before interacting. Do not use addresses shared in community channels, social media, or unofficial sites.
+</Warning>
+
+## Contract architecture
+
+<CardGroup cols={3}>
+  <Card title="Factory" icon="industry">
+    Deploys new pair contracts and maintains a registry of all trading pairs.
+  </Card>
+  <Card title="Pair" icon="arrows-split-up-and-left">
+    Each trading pair is its own contract, holding token reserves and managing LP token state.
+  </Card>
+  <Card title="Router" icon="route">
+    The user-facing entry point. Handles swaps, liquidity operations, and multi-hop routing.
+  </Card>
+</CardGroup>
+
+### Factory contract
+
+The Factory is the root of the protocol. Its responsibilities:
+
+- Deploy a new Pair contract when a new trading pair is created
+- Maintain a registry mapping token pairs to their Pair contract addresses
+- Ensure each token pair has exactly one canonical pool
+
+Anyone can call the Factory to create a new pair for any two tokens — no permission required.
+
+### Pair contracts
+
+Each trading pair (e.g., VARA/USDC) is managed by its own isolated Pair contract. Each Pair:
+
+- Holds the reserves of both tokens
+- Tracks LP token balances for all liquidity providers
+- Executes the constant product formula on every swap
+- Collects and retains swap fees within its reserves
+
+Because each pair is a separate contract, adding a new token to the ecosystem never affects existing pools.
+
+### Router contract
+
+The Router is the contract you interact with directly when using the RivrDEX interface. It:
+
+- Provides a safe, user-friendly interface for swaps and liquidity operations
+- Handles slippage checks and deadline enforcement (reverts the transaction if conditions aren't met)
+- Routes multi-hop swaps across intermediate pairs when a direct pair doesn't exist
+- Calculates optimal amounts in and out before calling the underlying Pair contracts
+
+You do not need to interact with Pair contracts directly — the Router handles everything.
+
+## Non-custodial design
+
+The contracts hold user assets directly in their reserves, but **no administrator or team wallet has any special access to those funds**. Liquidity can only be withdrawn by redeeming LP tokens from the same address that deposited them. There are no admin keys, pause functions, or upgrade mechanisms that could affect user funds.
+
+## Open-source
+
+All RivrDEX contracts are publicly viewable. You can audit the logic, verify behavior, and confirm there are no hidden mechanisms. Check the official GitHub for the current source.
+
+## WASM, not EVM
+
+Vara Network uses **Gear's actor model** and compiles contracts to **WebAssembly (WASM)** — not Ethereum's EVM bytecode. This means:
+
+- You cannot interact with RivrDEX contracts using MetaMask, ethers.js, or other EVM tooling
+- You need **Vara-compatible tooling** such as [Gear.js](https://github.com/gear-tech/gear-js) or the [Polkadot.js API](https://polkadot.js.org/docs/api/)
+- The RivrDEX web interface handles all contract interactions for you — no manual tooling required for standard use
+
+<Info>
+  If you are building an integration or bot on top of RivrDEX, use Gear.js or the Polkadot.js API to construct and send messages to the contract addresses listed on the official RivrDEX website at [rivrdex.io](https://rivrdex.io).
+</Info>

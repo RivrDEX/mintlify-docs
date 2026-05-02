@@ -1,0 +1,53 @@
+---
+title: "Interface overview"
+description: "A tour of the RivrDEX app — top navigation, Swap page, and Pools page."
+---
+
+The RivrDEX app lives at [stg-app.rivrdex.io](https://stg-app.rivrdex.io). The interface is built around two main sections — **Swap** and **Pools** — accessible from the top navigation bar.
+
+## Top navigation
+
+The top bar is visible across all pages and contains two key controls:
+
+- **Swap / Pools links** — switch between the two main sections of the app.
+- **Connect Wallet button** (top-right) — opens the wallet connection modal. Once connected, your account address and balance are displayed here.
+
+Prices and balances across the app update in real time via a backend indexer — you don't need to refresh the page.
+
+---
+
+## Pages
+
+<Tabs>
+  <Tab title="Swap">
+    The Swap page is where you exchange one token for another. A single transaction, a single fee.
+
+    **Key elements:**
+
+    - **FROM selector** — choose the token you want to sell and enter the amount.
+    - **TO selector** — choose the token you want to receive. The output amount is calculated automatically.
+    - **Price impact display** — shows how much your trade moves the pool price. Large trades relative to pool size will show a higher impact.
+    - **Slippage settings** — set your maximum acceptable slippage tolerance. Transactions that would exceed this threshold are rejected.
+    - **Swap button** — submits the transaction to your wallet for signing.
+
+    RivrDEX charges a flat **0.35% swap fee** on every trade. There is no traditional gas cost — the fee covers execution on Vara Network.
+  </Tab>
+  <Tab title="Pools">
+    The Pools page shows all available liquidity pools and lets you manage your positions.
+
+    **Key elements:**
+
+    - **Pool list** — all active trading pairs with their current liquidity depth and volume.
+    - **Add liquidity button** — deposit two tokens into a pool in equal value. You receive LP tokens representing your share.
+    - **Remove liquidity button** — burn your LP tokens to withdraw your share of the pool plus any accrued fees.
+    - **Your positions** — a summary of the pools you have active LP positions in, including your share percentage and token amounts.
+
+    When you provide liquidity, you earn a proportional share of the 0.35% fee on every swap that flows through your pool.
+  </Tab>
+</Tabs>
+
+---
+
+## Real-time data
+
+RivrDEX connects to a backend indexer that tracks on-chain state continuously. Token prices, pool depths, and wallet balances reflect the current state of the chain without requiring manual refresh. If you see a stale value, wait a moment — the indexer typically catches up within a few seconds of a new block.

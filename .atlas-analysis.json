@@ -1,0 +1,82 @@
+{
+  "projectType": "saas",
+  "projectName": "RivrDEX",
+  "projectDescription": "A permissionless, near-gasless decentralized exchange (AMM DEX) built on Vara Network for swapping tokens, providing liquidity, and launching new trading pairs.",
+  "theme": "willow",
+  "primaryColor": "#7c7c7c",
+  "lightColor": "#050505",
+  "darkColor": "#cfcfcf",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Docs",
+        "groups": [
+          {
+            "group": "Introduction",
+            "pages": [
+              "introduction/what-is-rivrdex",
+              "introduction/core-principles"
+            ]
+          },
+          {
+            "group": "Getting Started",
+            "pages": [
+              "getting-started/connect-wallet",
+              "getting-started/get-tokens",
+              "getting-started/interface-overview"
+            ]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "features/swapping",
+              "features/providing-liquidity",
+              "features/creating-pairs"
+            ]
+          },
+          {
+            "group": "Protocol",
+            "pages": [
+              "protocol/amm-mechanism",
+              "protocol/fee-structure",
+              "protocol/smart-contracts"
+            ]
+          },
+          {
+            "group": "Ecosystem",
+            "pages": [
+              "ecosystem/vara-network",
+              "ecosystem/partners-and-campaigns"
+            ]
+          },
+          {
+            "group": "Resources",
+            "pages": [
+              "resources/faq",
+              "resources/links"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Token swaps with 0.35% fee and near-zero gas costs",
+    "Permissionless liquidity provision with LP token rewards",
+    "Permissionless trading pair creation",
+    "AMM based on Uniswap v2 constant product formula",
+    "Real-time data via dedicated backend indexer",
+    "Non-custodial — users control their assets",
+    "Fully open-source and transparent",
+    "Built on Vara Network for fast execution"
+  ],
+  "publicApiSurface": [
+    "Swap interface — trade tokens",
+    "Pools interface — add/remove liquidity",
+    "Pair creation — deploy new trading pairs",
+    "Wallet connection — Vara-compatible wallets",
+    "LP token mechanics — earn fee share",
+    "Slippage tolerance settings",
+    "Transaction confirmation flow"
+  ]
+}

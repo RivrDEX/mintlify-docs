@@ -1,0 +1,91 @@
+{
+  "name": "RivrDEX",
+  "logo": {
+    "light": "/favicon.svg",
+    "dark": "/favicon.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#00AEEF",
+    "light": "#3DC5EC",
+    "dark": "#00AEEF",
+    "background": {
+      "light": "#ffffff",
+      "dark": "#000000"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Website",
+      "url": "https://rivrdex.io"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Launch App",
+    "url": "https://stg-app.rivrdex.io"
+  },
+  "tabs": [],
+  "anchors": [
+    {
+      "name": "X / Twitter",
+      "icon": "x-twitter",
+      "url": "https://x.com/Rivr_DEX"
+    },
+    {
+      "name": "Discord",
+      "icon": "discord",
+      "url": "https://discord.com/invite/rivrdex"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Introduction",
+      "pages": [
+        "introduction/what-is-rivrdex",
+        "introduction/core-principles"
+      ]
+    },
+    {
+      "group": "Getting Started",
+      "pages": [
+        "getting-started/connect-wallet",
+        "getting-started/get-tokens",
+        "getting-started/interface-overview"
+      ]
+    },
+    {
+      "group": "Core Features",
+      "pages": [
+        "features/swapping",
+        "features/providing-liquidity",
+        "features/creating-pairs"
+      ]
+    },
+    {
+      "group": "Protocol",
+      "pages": [
+        "protocol/amm-mechanism",
+        "protocol/fee-structure",
+        "protocol/smart-contracts"
+      ]
+    },
+    {
+      "group": "Ecosystem",
+      "pages": [
+        "ecosystem/vara-network",
+        "ecosystem/partners-and-campaigns"
+      ]
+    },
+    {
+      "group": "Resources",
+      "pages": [
+        "resources/faq",
+        "resources/links"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "x": "https://x.com/Rivr_DEX",
+    "discord": "https://discord.com/invite/rivrdex"
+  }
+}

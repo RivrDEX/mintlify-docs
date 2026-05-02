@@ -1,0 +1,60 @@
+---
+title: Core principles
+description: RivrDEX is built on four principles — open-source, permissionless, near-gasless, and non-custodial. Together, they define what the protocol is and who it's for.
+---
+
+RivrDEX is designed around four properties that make decentralized finance practical, not just theoretical. These aren't marketing claims — they're architectural decisions baked into how the protocol works.
+
+<CardGroup cols={2}>
+  <Card title="Open-source" icon="code">
+    The AMM architecture is fully transparent. All contract logic runs on-chain and is publicly visible. There are no hidden mechanisms, admin keys, or proprietary black boxes.
+  </Card>
+  <Card title="Permissionless" icon="lock-open">
+    Anyone can trade, add liquidity, or create a new token pair — no application, no whitelist, no approval from a central authority. If the tokens exist, you can list them.
+  </Card>
+  <Card title="Near-gasless" icon="bolt">
+    Vara Network's architecture removes the traditional gas fee model. You pay only the **0.35% swap fee** when trading. There is no gas overhead on top of that.
+  </Card>
+  <Card title="Non-custodial" icon="wallet">
+    RivrDEX never holds your assets. Trades and liquidity operations are executed directly from your wallet via smart contracts. No deposits, no custodian, no counterparty risk.
+  </Card>
+</CardGroup>
+
+## Open-source
+
+The protocol's contracts are deployed on-chain and readable by anyone. You don't need to trust RivrDEX's claims about how it works — you can verify the logic directly.
+
+<Info>
+  All liquidity pool logic, including fee distribution and price calculation, follows the constant product formula. Nothing is obscured.
+</Info>
+
+## Permissionless
+
+Permissionless means the protocol has no gatekeepers. You don't need to:
+
+- Request approval to trade a token
+- Apply to list a new trading pair
+- Pass any form of identity verification
+
+If a token exists on Vara Network, you can create a pool for it and start trading immediately.
+
+## Near-gasless
+
+On most blockchains, users pay a gas fee on every transaction in addition to any protocol fee. Vara Network's architecture eliminates that overhead.
+
+On RivrDEX:
+
+- **You pay**: 0.35% of the swap amount as a fee to liquidity providers
+- **You don't pay**: separate gas costs on top of the swap fee
+
+<Tip>
+  This makes small trades economically viable — you're not losing a disproportionate amount to network fees.
+</Tip>
+
+## Non-custodial
+
+At no point does RivrDEX take custody of your tokens. Every action — swapping, depositing liquidity, withdrawing — is a direct interaction between your wallet and an on-chain contract.
+
+- No sign-up required
+- No KYC or identity checks
+- No central party that can freeze or seize your funds

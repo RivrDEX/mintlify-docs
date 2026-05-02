@@ -1,0 +1,52 @@
+---
+title: What is RivrDEX
+description: RivrDEX is a permissionless, non-custodial automated market maker (AMM) DEX built on Vara Network — fast, near-gasless, and open to anyone.
+---
+
+RivrDEX is a decentralized exchange (DEX) built on [Vara Network](https://vara.network). It uses a constant product AMM model inspired by Uniswap v2, giving anyone the ability to trade tokens, supply liquidity, and create new trading pairs — without permission, sign-up, or intermediaries.
+
+<Note>
+  RivrDEX is non-custodial. Your assets stay in your wallet at all times. No sign-up or KYC is required.
+</Note>
+
+## What you can do
+
+<CardGroup cols={3}>
+  <Card title="Swap tokens" icon="arrow-right-arrow-left">
+    Exchange any supported token pair instantly. Pay only the 0.35% swap fee — no gas overhead.
+  </Card>
+  <Card title="Provide liquidity" icon="droplets">
+    Deposit token pairs into liquidity pools and earn a share of swap fees proportional to your contribution.
+  </Card>
+  <Card title="Create trading pairs" icon="circle-plus">
+    List any two tokens as a new pair. No approval process, no gatekeeping.
+  </Card>
+</CardGroup>
+
+## How it works
+
+RivrDEX uses the constant product formula to price trades:
+
+```text
+x * y = k
+```
+
+Where `x` and `y` are the reserves of each token in a pool, and `k` is a constant that the AMM preserves across every trade. This formula ensures liquidity is always available at some price.
+
+## Near-gasless trading
+
+Vara Network's architecture eliminates traditional gas fees. When you trade on RivrDEX, you pay only the **0.35% swap fee** — no additional gas cost on top.
+
+<Tip>
+  The 0.35% swap fee goes directly to liquidity providers, not to the protocol or any central party.
+</Tip>
+
+## Real-time data
+
+RivrDEX runs a dedicated backend indexer that tracks on-chain activity and surfaces real-time pool data, price history, and liquidity metrics in the app.
+
+## Get started
+
+<Card title="Launch RivrDEX" icon="arrow-up-right-from-square" href="https://stg-app.rivrdex.io">
+  Open the app and start trading on Vara Network.
+</Card>

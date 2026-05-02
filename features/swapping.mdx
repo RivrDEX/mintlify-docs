@@ -1,0 +1,82 @@
+---
+title: "Swapping tokens"
+description: "Exchange one token for another at the current AMM price. Near-gasless, with a flat 0.35% fee."
+---
+
+Swapping exchanges one token for another using RivrDEX's automated market maker (AMM). The AMM prices every trade using the constant product formula — no order book, no counterparty required.
+
+## How swaps work
+
+When you submit a swap, RivrDEX:
+
+1. Calculates the output amount based on the current pool reserves and the constant product formula (`x * y = k`).
+2. Deducts a **0.35% fee** from your input amount and distributes it to liquidity providers in that pool.
+3. Updates the pool reserves, which shifts the price for the next trade.
+
+## Fees
+
+| Fee type | Amount | Who receives it |
+|---|---|---|
+| Swap fee | 0.35% of input | Liquidity providers in the pool |
+| Gas | None | — |
+
+<Note>
+RivrDEX runs on Vara Network, which means near-zero gas overhead. The only cost you pay is the 0.35% swap fee, deducted from your input token.
+</Note>
+
+## Slippage tolerance
+
+Slippage is the difference between the price you see when you submit a swap and the price at which it executes. It happens because other transactions can change pool reserves between when you submit and when your swap lands on-chain.
+
+You can set a **slippage tolerance** — the maximum price movement you'll accept before the trade reverts automatically.
+
+| Setting | When to use |
+|---|---|
+| 0.5% | Default for most trades on stable or high-liquidity pairs |
+| 1.0% | Pairs with moderate liquidity or higher volatility |
+| >1.0% | Low-liquidity pairs or large trades; use with caution |
+
+<Tip>
+Setting slippage too low causes trades to fail when prices move even slightly. Setting it too high means you may receive significantly less than expected. Start with 0.5%–1% for most swaps.
+</Tip>
+
+## Price impact
+
+Price impact is how much your trade moves the pool price. Larger trades relative to pool size cause higher price impact — you push the price against yourself as you buy or sell.
+
+RivrDEX shows your estimated price impact before you confirm. If it's high:
+
+- Consider splitting your trade into smaller chunks.
+- Wait for more liquidity to enter the pool.
+- Accept the impact if the trade is still worthwhile at that price.
+
+<Warning>
+Trades with price impact above 5% will be flagged in the UI. Proceed only if you understand the effective price you're receiving.
+</Warning>
+
+## How to swap
+
+<Steps>
+  <Step title="Open the swap interface">
+    Go to [stg-app.rivrdex.io](https://stg-app.rivrdex.io) and select **Swap** from the navigation.
+  </Step>
+  <Step title="Select your input token">
+    Click the token selector in the **From** field and choose the token you want to sell. Enter the amount you want to swap.
+  </Step>
+  <Step title="Select your output token">
+    Click the token selector in the **To** field and choose the token you want to receive. The estimated output amount updates automatically.
+  </Step>
+  <Step title="Review the trade details">
+    Check the following before confirming:
+    - **Exchange rate** — how many output tokens per input token
+    - **Price impact** — how much your trade moves the pool price
+    - **Minimum received** — the least you'll get after slippage
+    - **Fee** — 0.35% of your input amount
+  </Step>
+  <Step title="Adjust slippage if needed">
+    Click the settings icon to set your slippage tolerance. The default is 0.5%.
+  </Step>
+  <Step title="Confirm the swap">
+    Click **Swap**, then approve the transaction in your wallet. Your output tokens arrive in your wallet once the transaction is confirmed.
+  </Step>
+</Steps>
