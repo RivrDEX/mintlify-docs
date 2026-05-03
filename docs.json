@@ -10,11 +10,19 @@
   },
   "favicon": "/favicon.svg",
   "logo": {
-    "light": "/favicon.svg",
-    "dark": "/favicon.svg"
+    "light": "/logo/logo-blue.png",
+    "dark": "/logo/logo-blue.png"
   },
   "appearance": {
     "default": "dark"
+  },
+  "font": {
+    "headings": {
+      "family": "Roboto"
+    },
+    "body": {
+      "family": "Roboto"
+    }
   },
   "navigation": {
     "groups": [
