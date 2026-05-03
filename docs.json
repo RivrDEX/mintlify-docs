@@ -10,9 +10,9 @@
   },
   "favicon": "/favicon.svg",
   "logo": {
-    "light": "/logo/logo-blue.png",
-    "dark": "/logo/logo-blue.png"
-  },
+  "light": "/logo/logo-blue.PNG",
+  "dark": "/logo/logo-blue.PNG"
+},
   "appearance": {
     "default": "dark"
   },
