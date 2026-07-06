@@ -36,6 +36,7 @@
       {
         "group": "Getting Started",
         "pages": [
+          "getting-started/quickstart",
           "getting-started/connect-wallet",
           "getting-started/get-tokens",
           "getting-started/interface-overview"
@@ -47,6 +48,16 @@
           "features/swapping",
           "features/providing-liquidity",
           "features/creating-pairs"
+        ]
+      },
+      {
+        "group": "Rewards",
+        "pages": [
+          "rewards/overview",
+          "rewards/quickstart",
+          "rewards/earning-points",
+          "rewards/levels-and-loyalty",
+          "rewards/shop"
         ]
       },
       {
@@ -91,7 +102,7 @@
     "primary": {
       "type": "button",
       "label": "Launch App",
-      "href": "https://stg-app.rivrdex.io"
+      "href": "https://app.rivrdex.io"
     }
   },
   "footer": {

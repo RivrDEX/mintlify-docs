@@ -1,62 +1,30 @@
 ---
 title: "Get tokens"
-description: "Get TVARA and other tokens on Vara Network to start trading on RivrDEX."
+description: "Bridge VARA and other assets to Vara Network mainnet to start trading on RivrDEX."
 ---
 
-To trade or provide liquidity on RivrDEX, you need tokens in your Vara wallet. The process depends on whether you're on testnet or mainnet.
+To trade or provide liquidity on RivrDEX, you need tokens in your Vara wallet. The [Vara Network Bridge](https://bridge.vara.network) moves assets between Ethereum mainnet and Vara mainnet in about 20 minutes.
 
-<Note>
-  RivrDEX currently operates on testnet. Use TVARA and wrapped testnet tokens for all transactions.
-</Note>
-
-## Testnet: bridge assets using Vara Network Bridge
-
-The Vara Network Bridge allows you to move tokens between Ethereum (Holesky testnet) and Vara testnet. Supported assets: TVARA, WTVARA, WUSDC, WBTC, WETH, WUSDT.
-
-<Warning>
-  Make sure you switch to **Testnet** mode in the bridge before proceeding. The network selector is in the top-left corner of the bridge interface — set it to **Testnet (Vara Testnet · Ethereum Hoodi)**, not Mainnet.
-</Warning>
+## Bridge assets to Vara
 
 <Steps>
   <Step title="Open the bridge">
-    Go to [bridge.vara.network](https://bridge.vara.network/?network=testnet). The link opens directly in Testnet mode.
+    Go to [bridge.vara.network](https://bridge.vara.network) and make sure the network selector in the top-left shows **Mainnet (Vara Mainnet · Ethereum Mainnet)**.
   </Step>
   <Step title="Connect your wallets">
-    Connect both your **MetaMask** (for Ethereum side) and your **Vara-compatible wallet** such as SubWallet or Polkadot.js extension (for Vara side). Both wallet addresses will appear in the top navigation bar.
+    Connect **MetaMask** for the Ethereum side and your **Vara-compatible wallet** (SubWallet or Polkadot.js extension) for the Vara side. Both addresses appear in the top navigation bar.
   </Step>
-  <Step title="Get testnet tokens from the faucet">
-    Go to the **My Tokens & Faucet** tab. You'll see your balances on both Vara and Ethereum. Use the **Get Balance** button next to USDC, WBTC, USDT, or ETH to claim free testnet tokens directly to your Ethereum wallet.
+  <Step title="Select asset and amount">
+    On the **Bridge** tab, choose the token you want to send (VARA, ETH, BTC, USDT, or USDC) and enter the amount. Paste your Vara address in the **Bridge to** field — or click **Use Wallet Address** to fill it automatically. Leave Claim Type on **Automatic** for the simplest experience.
   </Step>
-  <Step title="Bridge tokens to Vara">
-    Go back to the **Bridge** tab. Select the token you want to send, enter the amount, and paste your Vara wallet address in the **Bridge to** field — or click **Use Wallet Address** to fill it automatically. Leave Claim Type on **Automatic** for the simplest experience. Review the expected fee (~0.000125 ETH) and bridge time (~20 min), then click **Submit**.
-  </Step>
-  <Step title="Wait for confirmation">
-    Bridging takes approximately **20 minutes**. You can track the status in the **Transactions** tab. Once complete, your wrapped tokens (e.g. WETH, WUSDT) will appear in your Vara wallet.
+  <Step title="Confirm and wait">
+    Review the expected fee and bridge time, then click **Submit** and approve the transaction in your wallet. Bridging takes approximately **20 minutes** — track progress in the **Transactions** tab. Once complete, your wrapped tokens (e.g. wETH, wUSDT) appear in your Vara wallet.
   </Step>
 </Steps>
 
 <Tip>
   If your transaction appears stuck after the first signature, don't worry — your tokens are locked but safe. The bridge UI will notify you to sign a second pending transaction to complete the transfer.
 </Tip>
-
-## Mainnet: bridge assets to Vara Network
-
-On mainnet, the same bridge supports transfers between Ethereum mainnet and Vara mainnet.
-
-<Steps>
-  <Step title="Open the bridge on Mainnet">
-    Go to [bridge.vara.network](https://bridge.vara.network) and make sure the network selector in the top-left shows **Mainnet (Vara Mainnet · Ethereum Mainnet)**.
-  </Step>
-  <Step title="Connect your wallets">
-    Connect MetaMask for the Ethereum side and your Vara-compatible wallet for the Vara side.
-  </Step>
-  <Step title="Select asset and amount">
-    Choose the token you want to bridge (VARA, ETH, BTC, USDT, or USDC), enter the amount, and confirm the destination address on Vara.
-  </Step>
-  <Step title="Confirm and wait">
-    Approve the transaction in your wallet. Bridging takes approximately 20 minutes depending on network conditions. Track progress in the **Transactions** tab.
-  </Step>
-</Steps>
 
 ## Supported tokens
 
@@ -71,3 +39,7 @@ On mainnet, the same bridge supports transfers between Ethereum mainnet and Vara
 ## What's next
 
 Once you have tokens in your Vara wallet, head to the [Swap page](/features/swapping) to make your first trade, or visit [Pools](/features/providing-liquidity) to start earning fees by providing liquidity.
+
+<Note>
+  Trading on RivrDEX also earns [Rewards points](/rewards/overview) — verify your wallet at [rivrdex.io/rewards](https://rivrdex.io/rewards) before you start so every swap counts.
+</Note>
