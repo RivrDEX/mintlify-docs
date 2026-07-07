@@ -3,14 +3,13 @@ title: "Fee structure"
 description: "How RivrDEX's 0.35% swap fee is collected, distributed, and why there's no separate gas cost."
 ---
 
-RivrDEX charges a single, flat fee on every swap. There are no hidden fees, no protocol cut, and no separate gas costs.
+RivrDEX charges a single, flat fee on every swap. There are no hidden fees and no separate gas costs.
 
 ## Fee summary
 
 | Fee type | Amount | Who receives it |
 |---|---|---|
-| Swap fee | 0.35% of input amount | Liquidity providers (proportional to pool share) |
-| Protocol fee | None | — |
+| Swap fee | 0.35% of input amount | 0.3% — liquidity providers (proportional to pool share) · 0.05% — protocol |
 | Gas fee | None | — |
 
 ## Swap fee
@@ -20,8 +19,7 @@ Every swap deducts **0.35%** from the input token before the trade executes agai
 **Example:** You swap 1,000 VARA for another token.
 - Fee: 1,000 × 0.0035 = **3.5 VARA**
 - Amount used to buy: 996.5 VARA
-
-The 3.5 VARA fee stays in the pool — it is never extracted as a separate transfer.
+- Of that fee, **3 VARA** (0.3%) accrues to the pool's liquidity providers and **0.5 VARA** (0.05%) is the protocol share.
 
 ## How fees accrue to liquidity providers
 
@@ -34,7 +32,7 @@ Fees are not paid out immediately. Instead, they are added directly to the pool'
     You add token X and token Y to a pool in equal value. You receive LP tokens in return.
   </Step>
   <Step title="Fees accumulate">
-    Every swap against that pool adds 0.35% to the reserves. Your LP tokens grow in value with every trade.
+    Every swap against that pool adds its 0.3% LP share to the reserves. Your LP tokens grow in value with every trade.
   </Step>
   <Step title="Withdraw and collect">
     When you remove liquidity and burn your LP tokens, you receive your share of the current reserves — which now includes all accumulated fees.
@@ -53,4 +51,4 @@ Vara Network's architecture means you do not pay a separate gas cost when swappi
 
 ## Protocol fee
 
-There is currently **no protocol fee**. 100% of every swap fee goes directly to liquidity providers. This may change in the future through a governance or protocol upgrade — any such change would be publicly announced.
+Of the 0.35% swap fee, **0.05%** is the protocol share — it supports RivrDEX's development and operations. The remaining **0.3%** goes to liquidity providers. Any future change to this split would be publicly announced.

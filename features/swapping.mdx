@@ -10,14 +10,14 @@ Swapping exchanges one token for another using RivrDEX's automated market maker 
 When you submit a swap, RivrDEX:
 
 1. Calculates the output amount based on the current pool reserves and the constant product formula (`x * y = k`).
-2. Deducts a **0.35% fee** from your input amount and distributes it to liquidity providers in that pool.
+2. Deducts a **0.35% fee** from your input amount — the pool's liquidity providers earn 0.3% of it.
 3. Updates the pool reserves, which shifts the price for the next trade.
 
 ## Fees
 
 | Fee type | Amount | Who receives it |
 |---|---|---|
-| Swap fee | 0.35% of input | Liquidity providers in the pool |
+| Swap fee | 0.35% of input | Liquidity providers (0.3%) + protocol (0.05%) |
 | Gas | None | — |
 
 <Note>
