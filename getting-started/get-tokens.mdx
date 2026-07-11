@@ -30,10 +30,27 @@ the always-current list of supported platforms lives on the official
     Connect **MetaMask** for the Ethereum side and your **Vara-compatible wallet** (SubWallet or Polkadot.js extension) for the Vara side. Both addresses appear in the top navigation bar.
   </Step>
   <Step title="Select asset and amount">
-    On the **Bridge** tab, choose the token you want to send (VARA, ETH, BTC, USDT, or USDC) and enter the amount. Paste your Vara address in the **Bridge to** field — or click **Use Wallet Address** to fill it automatically. Leave Claim Type on **Automatic** for the simplest experience.
+    On the **Bridge** tab, choose the token to send and enter the amount.
+
+    <Warning>
+    **Bridge USDT only.** The DEX currently trades against wUSDT — there is no
+    WETH/VARA or WUSDC/VARA pair yet. If you bridge ETH or USDC, you'll receive
+    wrapped tokens you can't swap. Bridge **USDT → wUSDT** and you're set.
+    </Warning>
+
+    Paste your Vara address in the **Bridge to** field — or click
+    **Use Wallet Address** to fill it automatically.
+
+    In **Transfer Settings**:
+
+    - **Transfer Speed:** pick **Fast** — your bridge completes in ~20 minutes.
+      Common is slower.
+    - **Claim Type:** keep **Automatic** (the default). With Manual you'd have to
+      claim the tokens yourself, which requires VARA for gas — exactly what a new
+      user doesn't have yet. Automatic delivers the tokens on its own.
   </Step>
   <Step title="Confirm and wait">
-    Review the expected fee and bridge time, then click **Submit** and approve the transaction in your wallet. Bridging takes approximately **20 minutes** — track progress in the **Transactions** tab. Once complete, your wrapped tokens (e.g. wETH, wUSDT) appear in your Vara wallet.
+    Review the expected fee and bridge time, then click **Submit** and approve the transaction in your wallet. Bridging takes approximately **20 minutes** — track progress in the **Transactions** tab. Once complete, your wrapped tokens (e.g. wUSDT) appear in your Vara wallet.
   </Step>
 </Steps>
 
@@ -70,6 +87,19 @@ your first swap is covered automatically with a voucher.
     everything you do afterwards.
   </Step>
 </Steps>
+
+## Where is my VARA? (wVARA)
+
+Some swaps deliver **wVARA** (wrapped VARA) instead of native VARA. It's the
+same value — it just needs one click to unwrap:
+
+1. After the swap, a **"Receive VARA"** dialog may appear — click it and
+   you're done.
+2. Missed the dialog? Open the bridge → **My Tokens** tab. If you see a wVARA
+   balance, click **Convert To VARA**.
+
+Your funds are never lost — if a balance looks missing, check the My Tokens
+tab first, then refresh the page or reconnect your wallet.
 
 ## What's next
 
