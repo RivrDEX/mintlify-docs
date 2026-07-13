@@ -1,16 +1,16 @@
 ---
 title: "Fee structure"
-description: "How RivrDEX's 0.35% swap fee is collected, distributed, and why there's no separate gas cost."
+description: "How RivrDEX's 0.35% swap fee is collected, distributed, and why network fees are near-zero."
 ---
 
-RivrDEX charges a single, flat fee on every swap. There are no hidden fees and no separate gas costs.
+RivrDEX charges a single, flat fee on every swap. There are no hidden fees, and the network fee is near-zero.
 
 ## Fee summary
 
 | Fee type | Amount | Who receives it |
 |---|---|---|
 | Swap fee | 0.35% of input amount | 0.3% — liquidity providers (proportional to pool share) · 0.05% — protocol |
-| Gas fee | None | — |
+| Network fee (gas) | Near-zero — a tiny amount of VARA | Vara Network |
 
 ## Swap fee
 
@@ -41,12 +41,14 @@ Fees are not paid out immediately. Instead, they are added directly to the pool'
 
 Your fee earnings are proportional to your share of the pool. If you own 10% of a pool's LP tokens, you receive 10% of all fees that pool has ever earned (minus fees earned before you joined).
 
-## No gas fees
+## Near-zero network fees
 
-Vara Network's architecture means you do not pay a separate gas cost when swapping on RivrDEX. The 0.35% swap fee is the **only cost** of a trade.
+Vara Network's architecture keeps the network fee of a swap at a near-zero amount of VARA — a fraction of a cent. In practice, the 0.35% swap fee is the only cost that matters.
+
+Your **first swap** doesn't even need that: RivrDEX covers its network fee with a [gas voucher](/getting-started/voucher-guide), so it works with a zero VARA balance.
 
 <Info>
-  This is one of the core advantages of building on Vara. Traditional EVM chains charge gas on top of swap fees. On RivrDEX, what you see is what you pay.
+  This is one of the core advantages of building on Vara. Traditional EVM chains charge meaningful gas on top of swap fees. On RivrDEX, what you see is what you pay.
 </Info>
 
 ## Protocol fee

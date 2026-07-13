@@ -97,7 +97,7 @@
       },
       {
         "label": "Discord",
-        "href": "https://discord.com/invite/rivrdex"
+        "href": "https://discord.gg/rivrdex"
       }
     ],
     "primary": {
@@ -109,7 +109,7 @@
   "footer": {
     "socials": {
       "x": "https://x.com/Rivr_DEX",
-      "discord": "https://discord.com/invite/rivrdex"
+      "discord": "https://discord.gg/rivrdex"
     }
   }
 }
