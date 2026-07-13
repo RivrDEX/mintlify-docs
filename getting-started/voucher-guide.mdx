@@ -1,0 +1,135 @@
+---
+title: "First swap with the voucher"
+description: "A visual, step-by-step walkthrough: bridge USDT, then make your first RivrDEX swap with zero VARA using the gas voucher."
+---
+
+The voucher lets you make your **first swap without holding any VARA** to pay the
+network fee — and that first swap is exactly how you get the VARA that covers
+every swap afterward. Here's the full flow, screen by screen.
+
+<Note>
+  Prefer a text reference over screenshots? [Get tokens](/getting-started/get-tokens)
+  covers the same flow in a shorter, no-images format.
+</Note>
+
+<Steps>
+  <Step title="Open the Vara Bridge and connect both wallets">
+    Go to the [Vara Bridge](https://bridge.vara.network/?network=mainnet) and
+    connect your **EVM wallet** (Ethereum side) and your **Vara wallet** (Vara side).
+
+    You'll bridge **USDT** from Ethereum. If you don't have USDT yet, you can get
+    some quickly through the [RivrDEX cross-chain swap](https://app.rivrdex.io/cross-chain)
+    (powered by Delora).
+
+    <Frame caption="The Vara Bridge — USDT (Ethereum) to WUSDT (Vara), with both wallets connected">
+      <img src="/images/voucher/step-1-bridge-connect.png" alt="Vara Bridge interface showing USDT to WUSDT and Transfer Settings" />
+    </Frame>
+  </Step>
+
+  <Step title="Select the USDT → WUSDT pair">
+    Set the pair to **USDT (Ethereum Mainnet) → WUSDT (Vara Mainnet)** and enter
+    the amount. Paste your Vara address in the **Bridge to** field, or click
+    **Use Wallet Address** to fill it automatically.
+
+    <Warning>
+      **Bridge USDT only.** RivrDEX currently trades against **wUSDT** — bridging
+      ETH or USDC gives you wrapped tokens you can't swap yet.
+    </Warning>
+
+    <Frame caption="Choose USDT → WUSDT and set the destination Vara address">
+      <img src="/images/voucher/step-2-select-pair.png" alt="Bridge pair selection: USDT to WUSDT with Bridge-to address field" />
+    </Frame>
+  </Step>
+
+  <Step title="Choose the claim type">
+    In **Transfer Settings**, pick how your tokens arrive:
+
+    - **Automatic** — tokens land in your wallet on their own, but you pay a small
+      extra fee in **ETH**.
+    - **Manual** — no extra ETH fee, but you claim the tokens yourself afterward,
+      which costs a fee in **VARA**.
+
+    <Frame caption="Automatic vs Manual claim in Transfer Settings">
+      <img src="/images/voucher/step-3-claim-type.png" alt="Claim type selector showing Automatic and Manual options" />
+    </Frame>
+
+    <Warning>
+      If this is your first bridge and you have **no VARA yet**, choose **Automatic**.
+      Manual claiming needs VARA for gas — exactly what you don't have yet.
+    </Warning>
+  </Step>
+
+  <Step title="Confirm and wait for the bridge (~20 min)">
+    Confirm the transaction in your wallet and wait — bridging takes about
+    **20 minutes**.
+
+    If you chose **Manual**, open the
+    [Transactions page](https://bridge.vara.network/transactions?network=mainnet)
+    after the bridge finishes and claim your tokens there.
+
+    <Frame caption="Manual claims are completed on the Transactions page">
+      <img src="/images/voucher/step-4-manual-claim.png" alt="Vara Bridge Transactions page for manual claiming" />
+    </Frame>
+  </Step>
+
+  <Step title="Open RivrDEX and connect your wallet">
+    Head to [RivrDEX](https://app.rivrdex.io/trade) and connect your Vara wallet.
+  </Step>
+
+  <Step title="Swap WUSDT → VARA">
+    Select the **WUSDT / VARA** pair, choose the amount, and confirm the swap.
+
+    <Frame caption="Swap WUSDT → VARA on RivrDEX">
+      <img src="/images/voucher/step-6-swap.png" alt="RivrDEX swap interface for WUSDT to VARA" />
+    </Frame>
+
+    <Tip>
+      **Your first swap is free.** RivrDEX covers the network fee for it — it works
+      even with a zero VARA balance. After it settles you're holding VARA, which
+      pays the gas for everything you do next.
+    </Tip>
+  </Step>
+
+  <Step title="Convert WVARA → VARA">
+    Some swaps deliver **WVARA** (wrapped VARA). It's the same value — just convert
+    it to native VARA in one click when the **Receive VARA** dialog appears.
+
+    <Frame caption="Convert WVARA to native VARA right after the swap">
+      <img src="/images/voucher/step-7-convert.png" alt="Convert WVARA to VARA dialog" />
+    </Frame>
+
+    Missed the dialog? Open the bridge's **My Tokens** tab and convert it there.
+
+    <Frame caption="You can also convert from the My Tokens tab on the Vara Bridge">
+      <img src="/images/voucher/step-7-my-tokens.png" alt="My Tokens tab on the Vara Bridge showing a WVARA balance to convert" />
+    </Frame>
+  </Step>
+</Steps>
+
+That's it — you used the voucher for your first swap, and you now hold enough VARA
+to cover the fees on every swap that follows.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Do I need VARA in my wallet to use the voucher for my first swap?">
+    No. You don't need any VARA to pay gas on your first swap — the network fee is
+    covered for you.
+  </Accordion>
+
+  <Accordion title="Can I change the claim type after I've confirmed the bridge?">
+    No. The claim type (Automatic or Manual) is fixed once you confirm.
+  </Accordion>
+
+  <Accordion title="Which exchanges can I buy VARA on?">
+    [Coinbase](https://www.coinbase.com/price/vara-network),
+    [Gate.io](https://www.gate.io/trade/VARA_USDT), and
+    [Crypto.com](https://crypto.com/price/vara-network). Withdraw on the native
+    Vara Network — see [Get tokens](/getting-started/get-tokens) for details.
+  </Accordion>
+
+  <Accordion title="Can I use the voucher on my second swap?">
+    No. The voucher only covers your **first** swap. After that you pay the standard
+    fee, using the VARA you received from that first swap.
+  </Accordion>
+</AccordionGroup>
